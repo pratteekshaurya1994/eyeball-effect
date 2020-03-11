@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>eyeball effect</title>
+<style type="text/css">
+
+.eye-ball-wrapper {
+	position: absolute;
+	padding: 1px;
+	width: 400px;
+	height: 230px;
+	border-radius: 50%;
+	background-color: white;
+	border: 10px solid black ;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	overflow: hidden;
+	transition: 250ms ease;
+}
+
+.eye {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(50%, 50%);
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.eye-wrapper {
+	position: absolute;
+}
+
+.eye-ball {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+}
+
+#innerCircle {
+	position: absolute;
+	left: 50%;
+	top: 50%;
+}
+
+</style>
+<script type="text/javascript">
+document.onmousemove = function(){
+	let x = event.clientX * 100 / window.innerWidth + "%";
+	let y = event.clientY * 100 / window.innerHeight + "%";
+	
+	var eye_ball = document.getElementById('eye-ball');
+	
+	eye_ball.style.left = x;
+	eye_ball.style.top = y;
+}
+</script>
+</head>
+<body>
+<div class="wrapper">
+	<div id="eye-bg" class="eye-ball-wrapper">		
+		<svg  id="eye-ball" class="eye-ball">
+			<circle cx="115" cy="80" r="60" stroke="black" stroke-width="6"  fill="white" />
+  			<circle cx="115" cy="80" r="50"  fill="black" />
+		</svg>
+	</div>
+</div>
+</body>
+</html>
